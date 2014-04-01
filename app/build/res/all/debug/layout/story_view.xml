@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp" >
+
+        <TextView
+            android:id="@+id/tvAboutTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="Spell of the Albino"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/tvAboutTitle"
+            android:layout_marginTop="22dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/spell_of_the_albino" />
+
+       <!--  <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView1"
+            android:text="Albinism is a non-contagious, genetically inherited disorder, affecting about 1 in 20,000 men and women around the world, regardless of ethnicity and geographical location. Sufferers are afflicted by a congenital absence of melanin, a pigmentation defect in the hair, skin and eyes that causes vulnerability to sun exposure and bright light. Many have very poor vision as a consequence and in tropical countries especially they can be vulnerable to skin cancers if unprotected from the sun.
+
+What albinism is absolutely not, is an indication that the afflicted person is any way invested with magical powers.
+
+Though it might seem absurdly obvious, the point is worth stating so starkly because in parts of sub-Saharan Africa especially, albinos have traditionally faced discrimination and prejudice - innocent victims of a still widespread belief that the condition is in some way associated with the supernatural. To some, a white-skinned African person is seen as a kind of phantom or ghost, who rather than die will dissolve or disappear with the wind and rain. As a result, in some communities, albinos have been feared, shunned and socially marginalised.
+
+Over the last five years in Tanzania, however, the situation has become much, much worse, with albinos increasingly subjected to murder and mutilation because of a completely spurious myth that albino body parts are effective in witchcraft rituals. Despite international outrage and repeated attempts by the Tanzanian government to stamp out this truly appalling practice, since it first came to light many albinos have been hunted down and attacked purely for their limbs and organs. Indeed the incidents seem to be increasing. Since 2008, at least 62 albinos have been killed in Tanzania, 16 have been violently assaulted and had their limbs amputated and the bodies of 12 albinos have been exhumed from graves and dismembered.
+
+Against this background, it is perhaps not surprising that estimates of the numbers of albinos in Tanzania vary significantly. Officially there are around 5,000 registered, but the country’s Albino Association says the real number is in excess of 150,000. They say that many albinos are still kept hidden by their families because of the stigma some associate with the condition or because of fear that they might be attacked.
+
+In this remarkable episode of Africa Investigates, Tanzanian journalist Richard Mgamba, albino community representative Isaack Timothy and Ghanaian investigative journalist Anas Aremeyaw Anas set out to discover what lies behind these sickening attacks and to uncover and confront some of those behind the grotesque trade in body parts for witchcraft rituals.
+
+In the process they meet two albino children, victims of vicious assaults that occurred in the weeks the film was being made. One of them is a 12-year-old boy who had part of his hand cut off, allegedly with the connivance of his father who is now in police custody and awaiting trial. The other is a 16-year-old girl whose left arm was hacked off by a stranger with a machete.
+
+But Anas, who goes undercover in the guise of a businessman seeking to get rich, also comes face to face with a witchdoctor who tries to sell him a potion containing ground up albino body parts. Not surprisingly, when the offer is made, Anas makes his abhorrence very plain.
+
+Right from the start of this film, viewers may find some of the images disturbing."
+            android:textSize="14sp" />
+ -->
+        <TextView
+            android:id="@+id/tvFirstRequired"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView1"
+            android:text="By Anas Aremeyaw Anas   Thousands of children have been killed in Ghana because the communities they are born into believe they are evil spirits. When I first heard about this I could not believe it was happening in my country in the 21st century.   The practice originally emerged as a way for poor families to deal with deformed or disabled children that they cannot look after. These families approach village elders known as concoction men and inform them that they suspect their child to be a so-called spirit child. The concoction man then takes the father of the child to visit a soothsayer who confirms whether or not the child is truly evil, without ever actually laying eyes on them.  Once this confirmation has been received, the concoction man brews a poisonous liquid from local roots and herbs and force-feeds it to the child, almost always resulting in death.   Over time, this practice has become a perceived solution to any problems a family might be having at the time of a child&apos;s birth. By blaming the child for sickness in the family, or the father&apos;s inability to find work or provide money to support his dependents, these communities have found an otherworldly explanation for their problems.   In this highly patriarchal society it enables heads of family to pass the blame for their struggles onto someone else. And by branding the child a spirit from outside the family, they can disassociate themselves and feel justified in murdering their own offspring, while telling those around them that now all will be well - the evil presence is gone.  But infanticide has always been a crime against humanity. I believe there is plenty of evidence of infanticide in the history of all human societies and its continued and widespread practice makes a mockery of the democratic credentials of the countries, including mine, where this crime still takes place. Many forms of civic engagement and advocacy have been used in a bid to eradicate this practice in Ghana and other West African nations. Sadly though, the limited efficacy of such techniques is illustrated by the fact that today children are still being killed in this way.  Ready to spill blood in the name of tradition  And sometimes a strong focus on understanding and education when dealing with traditional practices can distance us from the reality of a situation; it can place us in an ivory tower where we fail to engage with the true manner in which those involved are behaving. Far from acting like a man fulfilling a sad but necessary duty, the concoction man I hired to kill my fictitious child for the purposes of this film was excited; his eyes pinned wide with zeal as he went about preparing for the task at hand.   He laughed and joked about his previous experience, telling me about how he had recently killed a 12-year-old girl by tricking her into drinking his concoction and boasting about how effective his methods are. Without knowing the context, any casual observer would surely consider his disposition nothing short of murderous.   While I understand that he was misguided - ready to spill innocent blood in the name of tradition - I also strongly believe that, no matter what the circumstances, where children are being murdered the state must step in to punish those responsible in the same way that the citizens of any developed democracy would expect it to.  That is not to say that some understanding cannot be afforded to the concoction men and the communities that continue to practice these rituals. Unlike those with the benefit of technology who can see a badly developed fetus and terminate it before birth, the mothers whose babies are killed in northern Ghana have no such options.   They may find themselves giving birth to a child only to discover that it is not normal: it will never be accepted and will always be a burden on those around it. In the absence of technology or a refuge for mother and child to escape to, the concoction man is the only solution. As a result, the parents perceive him as a saviour; the only one who can deliver them from enduring further hardship. And the concoction men in turn thrive on the standing and power this affords them in the community.   When we think of slavery or the burning of alleged witches, these crimes against humanity were only eradicated when key actors in government decided to take a stand. By declaring these practices as unacceptable and threatening those who continue to perpetrate them with prosecution, governments have brought about the abolition of centuries-old traditions in a relatively short space of time.  Permitting evil to triumph over good  From northern Ghana, where the spirit child story is set, through Burkina Faso, Benin and parts of Nigeria, countless babies are killed based on age-old cultural beliefs. But despite this, we were unable to find any evidence of previous arrests for these crimes.  During the three weeks that I worked on this story, I came across 10 men who were willing to kill a baby for spiritual reasons. They were easy to find. Yet when I asked a senior police officer why no arrests have been made, his response was: "
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+</ScrollView><!-- From: file:/Users/aodubela/Documents/project/workspace/actnow1/app/src/main/res/layout/story_view.xml -->

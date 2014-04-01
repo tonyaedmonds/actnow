@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_black">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/activity_vertical_margin">
+
+        <org.actnow.utils.RobotoFont
+            android:id="@+id/textView1"
+            style="@style/textTitleStyle"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:layout_marginTop="48dp"
+            android:contentDescription="@string/contentDescription"
+            android:text="@string/petitionTitle"
+            android:textColor="@color/app_white" />
+
+        <org.actnow.utils.RobotoFont
+            android:id="@+id/tvPetitionStory"
+            style="@style/textBodyStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView1"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:text="Sustainable Wes Anderson yr, Vice twee Thundercats chambray cardigan craft beer."
+            android:textColor="@color/app_white" />
+
+        <View
+            android:id="@+id/ivGrayBreak1"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@+id/tvPetitionStory"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:background="@color/app_red" />
+
+        <View
+            android:id="@+id/ivGrayBreak2"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/ivGrayBreak1"
+            android:layout_marginTop="0.25dp"
+            android:background="@color/app_red" />
+
+        <org.actnow.utils.RobotoFont
+            android:id="@+id/tvSignPetition"
+            style="@style/signPetitionRed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ivGrayBreak2"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="8dp"
+            android:text="Sign Petition" />
+
+        <EditText
+            android:id="@+id/tvFirstname"
+            style="@style/formHintStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvSignPetition"
+            android:layout_marginTop="@dimen/stepMargin"
+            android:ems="10"
+            android:hint="Firstname"
+            android:imeOptions="actionNext"
+            android:inputType="textEmailAddress"
+            android:singleLine="true"></EditText>
+
+        <EditText
+            android:id="@+id/tvLastname"
+            style="@style/formHintStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvFirstname"
+            android:hint="Lastname"
+            android:imeOptions="actionNext"
+            android:singleLine="true" />
+
+        <EditText
+            android:id="@+id/tvCity"
+            style="@style/formHintStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvLastname"
+            android:hint="City"
+            android:imeOptions="actionNext"
+            android:singleLine="true" />
+
+        <EditText
+            android:id="@+id/tvState"
+            style="@style/formHintStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvCity"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:hint="State"
+            android:imeOptions="actionDone"
+            android:singleLine="true" />
+
+        <org.actnow.utils.RobotoFont
+            style="@style/textMetaStyle"
+            android:layout_alignBaseline="@+id/tvSignPetition"
+            android:layout_alignBottom="@+id/tvSignPetition"
+            android:layout_alignRight="@+id/tvFirstname"
+            android:gravity="right"
+            android:text="All fields required"
+            android:textColor="@color/app_gray" />
+
+        <ImageView
+            android:id="@+id/ivStateDropDown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/tvState"
+            android:layout_alignRight="@+id/tvState"
+            android:layout_alignTop="@+id/tvState"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/ic_action_expand" />
+
+        <Button
+            android:id="@+id/btnSignPetition"
+            style="@style/defaultButtonStroke"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvState"
+            android:layout_marginBottom="@dimen/activity_horizontal_margin"
+            android:hint="Sign Petition" />
+
+        <org.actnow.utils.RobotoFont
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnSignPetition"
+            android:gravity="center"
+            android:text="Oops, nevermind"
+            android:textColor="@color/app_gray" />
+    </RelativeLayout>
+
+</ScrollView><!-- From: file:/Users/aodubela/Documents/project/workspace/actnow1/app/src/main/res/layout/fragment_petition.xml -->

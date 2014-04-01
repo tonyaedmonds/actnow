@@ -1,0 +1,172 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+
+    </style>
+
+    <style name="ActionBar" parent="android:style/Widget.Holo.ActionBar">
+        <item name="android:background">@color/app_blue</item>
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+        <item name="android:actionBarStyle">@style/ActionBar</item>
+    </style>
+
+    <style name="AppThemeNoTitleBar" parent="android:Theme.NoTitleBar">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <style name="textDefault" parent="android:style/Widget.TextView">
+        <item name="android:padding">4dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="textTitleStyle" parent="textDefault">
+        <item name="android:textSize">@dimen/text_title_size</item>
+        <item name="android:textColor">@color/text_title_color</item>
+        <item name="typeface">roboto_slab_regular</item>
+    </style>
+
+    <style name="textBodyStyle" parent="textDefault">
+        <item name="android:textSize">@dimen/text_body_size</item>
+        <item name="typeface">roboto_slab_light</item>
+    </style>
+
+    <style name="textMetaStyle" parent="textDefault">
+        <item name="android:textSize">@dimen/text_meta_size</item>
+        <item name="typeface">roboto_slab_light</item>
+        <item name="android:textColor">@color/text_meta_color</item>
+    </style>
+
+
+    <style name="formHintStyle" parent="textBodyStyle">
+        <item name="android:textColor">@color/form_text_hint_color</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:layout_marginBottom">@dimen/default_view_margin</item>
+        <item name="android:layout_marginLeft">@dimen/activity_horizontal_margin</item>
+        <item name="android:layout_marginRight">@dimen/activity_horizontal_margin</item>
+        <item name="android:background">@drawable/shape_rect_stroke_gray</item>
+        <item name="android:gravity">left|center</item>
+    </style>
+
+    <style name="formInputStyle" parent="textBodyStyle">
+        <item name="android:textColor">@color/app_blue</item>
+        <item name="typeface">roboto_slab_regular</item>
+        <item name="android:layout_marginBottom">@dimen/default_view_margin</item>
+        <item name="android:background">@drawable/shape_rect_stroke_gray</item>
+        <item name="android:gravity">left|center</item>
+    </style>
+
+    <style name="formSubmitStyle" parent="textBodyStyle">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/app_blue</item>
+        <item name="typeface">roboto_slab_regular</item>
+    </style>
+
+
+
+    <style name="socialText" parent="textDefault">
+        <item name="android:paddingRight">5dp</item>
+        <item name="android:textColor">@color/app_white</item>
+        <item name="android:background">@drawable/shape_rect_gray</item>
+        <item name="android:layout_width">20dp</item>
+        <item name="android:layout_height">20dp</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:gravity">right|center</item>
+    </style>
+
+    <style name="editTextDefault" parent="android:style/Widget.TextView">
+        <item name="android:textColor">@color/app_gray</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:padding">14dp</item>
+        <item name="android:layout_marginBottom">@dimen/default_view_margin</item>
+        <item name="android:layout_marginLeft">@dimen/activity_horizontal_margin</item>
+        <item name="android:layout_marginRight">@dimen/activity_horizontal_margin</item>
+        <item name="android:background">@drawable/shape_rect_stroke_gray</item>
+        <item name="android:gravity">left|center</item>
+    </style>
+
+    <style name="buttonDefault" parent="android:style/Widget.Button">
+        <item name="android:textColor">@color/app_gray</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_marginBottom">@dimen/default_view_margin</item>
+        <item name="android:layout_marginLeft">@dimen/activity_horizontal_margin</item>
+        <item name="android:layout_marginRight">@dimen/activity_horizontal_margin</item>
+        <item name="android:background">@drawable/shape_rect_stroke_gray</item>
+        <item name="android:gravity">left|center</item>
+    </style>
+
+    <style name="defaultButtonStroke" parent="buttonDefault">
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/subTitleSize</item>
+    </style>
+
+    <style name="defaultButtonSolid" parent="buttonDefault">
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/app_white</item>
+        <item name="android:textSize">@dimen/subTitleSize</item>
+    </style>
+
+    <style name="redButtonSolid" parent="defaultButtonSolid">
+        <item name="android:background">@drawable/shape_rect_solid_red</item>
+        <item name="android:textColorHint">@color/app_white</item>
+        <item name="android:layout_marginLeft">@dimen/form_margin</item>
+        <item name="android:layout_marginRight">@dimen/form_margin</item>
+        <item name="android:layout_marginBottom">@dimen/activity_horizontal_margin</item>
+    </style>
+
+    <style name="blackButtonSolid" parent="defaultButtonSolid">
+        <item name="android:background">@drawable/shape_rect_solid_black</item>
+    </style>
+
+    <style name="blueButtonStroke" parent="buttonDefault">
+        <item name="android:background">@drawable/shape_rect_stroke_blue</item>
+        <item name="android:textColor">@color/app_blue</item>
+    </style>
+
+    //app fonts
+    <style name="roboto_slab_bold">
+        <item name="typeface">roboto_slab_bold</item>
+    </style>
+
+    <style name="roboto_slab_light">
+        <item name="typeface">roboto_slab_light</item>
+    </style>
+    <style name="roboto_slab_regular">
+        <item name="typeface">roboto_slab_regular</item>
+    </style>
+    <style name="roboto_slab_thin">
+        <item name="typeface">roboto_slab_thin</item>
+    </style>
+
+
+    <style name="signPetitionDefault" parent="textDefault">
+        <item name="android:textSize">14sp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="signPetitionBlack" parent="signPetitionDefault">
+        <item name="android:textColor">@color/app_black</item>
+    </style>
+
+    <style name="signPetitionRed" parent="signPetitionDefault">
+        <item name="android:textColor">@color/app_red</item>
+        <item name="android:textStyle">italic</item>
+        <item name="typeface">roboto_slab_bold</item>
+    </style>
+
+
+</resources>
