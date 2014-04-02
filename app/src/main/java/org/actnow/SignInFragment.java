@@ -12,12 +12,13 @@ import android.widget.EditText;
 
 public class SignInFragment extends Fragment {
     Button signupButton;
+    EditText username = null;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_login, container, false);
 
-        final EditText username = ((EditText) view.findViewById(R.id.etUsername));
+        username = ((EditText) view.findViewById(R.id.etUsername));
         username.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -31,11 +32,10 @@ public class SignInFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (username.getText().toString().matches("[a-zA-Z0-9._-]+@[a-z]+.[a-z]+") && s.length() > 0) {
-                    ActnowApp.setAuthenticated(true);
-                    changeButtonBackground();
-                }
+                validateUsername();
             }
+
+
         });
 
         signupButton = (Button) view.findViewById(R.id.btnLogin);
@@ -64,6 +64,16 @@ public class SignInFragment extends Fragment {
 //        });
 
         return view;
+    }
+
+    private void validateUsername() {
+        if (username != null && username.getText() != null &&
+                username.getText().toString().matches("[a-zA-Z0-9._-]+@[a-z]+.[a-z]+") && username.getText().length() > 0) {
+            ActnowApp.setAuthenticated(true);
+            changeButtonBackground();
+        } else {
+            username.setError("Please enter a valid email address");
+        }
     }
 
     private void changeButtonBackground() {

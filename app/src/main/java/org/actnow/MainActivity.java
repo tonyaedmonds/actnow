@@ -46,7 +46,7 @@ public class MainActivity extends ActionBarActivity
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction()
-                .replace(R.id.container, getSelectedFragment(position))
+                .replace(R.id.container, getSelectedFragment(position)).addToBackStack(null)
                 .commit();
     }
 

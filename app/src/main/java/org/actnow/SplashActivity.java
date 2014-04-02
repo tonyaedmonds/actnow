@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.widget.ImageView;
+
+import org.actnow.utils.BitmapWorkerTask;
 
 public class SplashActivity extends Activity {
 
@@ -13,6 +16,9 @@ public class SplashActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_splash);
+
+//        ImageView ivSplash = (ImageView) findViewById(R.id.ivSplash);
+//        new BitmapWorkerTask(ivSplash,getApplicationContext().getResources()).execute(R.drawable.splash_image);
 
 		new Handler().postDelayed(new Runnable() {
 			@Override

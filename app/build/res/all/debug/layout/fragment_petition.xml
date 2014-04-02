@@ -6,7 +6,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="@dimen/activity_vertical_margin">
 
@@ -66,8 +66,9 @@
             android:ems="10"
             android:hint="Firstname"
             android:imeOptions="actionNext"
-            android:inputType="textEmailAddress"
-            android:singleLine="true"></EditText>
+            android:inputType="text"
+            android:maxLength="50"
+            android:singleLine="true"/>
 
         <EditText
             android:id="@+id/tvLastname"
@@ -77,6 +78,8 @@
             android:layout_below="@+id/tvFirstname"
             android:hint="Lastname"
             android:imeOptions="actionNext"
+            android:inputType="text"
+            android:maxLength="50"
             android:singleLine="true" />
 
         <EditText
@@ -86,6 +89,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvLastname"
             android:hint="City"
+            android:inputType="text"
+            android:maxLength="50"
             android:imeOptions="actionNext"
             android:singleLine="true" />
 
@@ -97,6 +102,8 @@
             android:layout_below="@+id/tvCity"
             android:layout_marginBottom="@dimen/activity_vertical_margin"
             android:hint="State"
+            android:inputType="text"
+            android:maxLength="50"
             android:imeOptions="actionDone"
             android:singleLine="true" />
 
@@ -116,7 +123,7 @@
             android:layout_alignBottom="@+id/tvState"
             android:layout_alignRight="@+id/tvState"
             android:layout_alignTop="@+id/tvState"
-            android:layout_marginRight="10dp"
+            android:visibility="gone"
             android:src="@drawable/ic_action_expand" />
 
         <Button

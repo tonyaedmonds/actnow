@@ -51,6 +51,12 @@ public class AboutFragment extends Fragment {
 //        ssb.append(text);
         textView2.setText(ssb, TextView.BufferType.SPANNABLE);
 
+        if(ActnowApp.aboutViewed){
+            textView2.setVisibility(TextView.GONE);
+        }else{
+            ActnowApp.aboutViewed = true;
+        }
+
         //create round image
         ImageView ivImage1 = (ImageView) rootView.findViewById(R.id.ivImage1);
         ivImage1.setImageBitmap(getRoundedBitmap(ivImage1.getDrawable()));
