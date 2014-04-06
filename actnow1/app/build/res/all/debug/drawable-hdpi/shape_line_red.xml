@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="line">
+
+    <stroke
+        android:color="@color/app_red"
+        android:dashWidth="6px" />
+</shape>
+<!-- From: file:/Users/aodubela/Documents/project/workspace/actnow1/app/src/main/res/drawable-hdpi/shape_line_red.xml -->

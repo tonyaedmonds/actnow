@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/default_view_margin"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rlStory1"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/shape_drop_shadow"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvTitle1"
+                style="@style/textTitleStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:textSize="20sp"
+                android:padding="4dp"
+                android:text="@string/storyTitle1" />
+
+            <ImageView
+                android:id="@+id/ivStory1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/tvSource"
+                android:layout_below="@+id/tvTitle1"
+                android:layout_centerHorizontal="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/anas_4" />
+
+            <TextView
+                android:id="@+id/tvSource"
+                style="@style/textMetaStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:padding="4dp"
+                android:text="@string/storySource1"
+                 />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlStory2"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/shape_drop_shadow"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvTitle2"
+                style="@style/textTitleStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:padding="4dp"
+                android:text="@string/storyTitle2" />
+
+            <ImageView
+                android:id="@+id/ivStory2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/tvSource2"
+                android:layout_below="@+id/tvTitle2"
+                android:layout_centerHorizontal="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/anas2" />
+
+            <TextView
+                android:id="@+id/tvSource2"
+                style="@style/textMetaStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:padding="4dp"
+                android:text="@string/storySource2"
+                 />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlStory3"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/shape_drop_shadow"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvTitle3"
+                style="@style/textTitleStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:padding="4dp"
+                android:text="@string/storyTitle3" />
+
+            <ImageView
+                android:id="@+id/ivStory3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/tvSource3"
+                android:layout_below="@+id/tvTitle3"
+                android:layout_centerHorizontal="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/anas_3" />
+
+            <TextView
+                android:id="@+id/tvSource3"
+                style="@style/textMetaStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:padding="4dp"
+                android:text="@string/storySource3" />
+        </RelativeLayout>
+
+        <!--<RelativeLayout-->
+            <!--android:id="@+id/rlStory4"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="200dp"-->
+            <!--android:layout_margin="8dp"-->
+            <!--android:background="@drawable/shape_drop_shadow"-->
+            <!--android:orientation="vertical">-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/tvTitle4"-->
+                <!--style="@style/textTitleStyle"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_alignParentLeft="true"-->
+                <!--android:layout_alignParentStart="true"-->
+                <!--android:layout_alignParentTop="true"-->
+                <!--android:padding="4dp"-->
+                <!--android:text="Journalist Face-to-Face with Chinese Sex Mafia" />-->
+
+            <!--<ImageView-->
+                <!--android:id="@+id/ivStory4"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_above="@+id/tvSource4"-->
+                <!--android:layout_below="@+id/tvTitle4"-->
+                <!--android:layout_centerHorizontal="true"-->
+                <!--android:scaleType="centerCrop"-->
+                <!--android:src="@drawable/anas_1" />-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/tvSource4"-->
+                <!--style="@style/textMetaStyle"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_alignParentBottom="true"-->
+                <!--android:layout_alignParentLeft="true"-->
+                <!--android:layout_alignParentStart="true"-->
+                <!--android:padding="4dp"-->
+                <!--android:text="Source: ghanaweb.com | March 13, 2009" />-->
+        <!--</RelativeLayout>-->
+    </LinearLayout>
+
+</ScrollView>

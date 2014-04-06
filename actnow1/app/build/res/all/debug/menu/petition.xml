@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:actnowapp="http://schemas.android.com/apk/res-auto" >
+
+    <item
+        android:id="@+id/action_share"
+        actnowapp:actionProviderClass="android.support.v7.widget.ShareActionProvider"
+        actnowapp:showAsAction="ifRoom"
+        android:title="@string/share"/>
+
+</menu><!-- From: file:/Users/aodubela/Documents/project/workspace/actnow1/app/src/main/res/menu/petition.xml -->
