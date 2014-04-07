@@ -7,69 +7,81 @@ import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.ShareActionProvider;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class PetitionActivity extends ActionBarActivity implements TextWatcher {
+import org.actnow.utils.ValidationUtil;
+
+public class PetitionActivity extends ActionBarActivity implements TextWatcher, TextView.OnEditorActionListener , View.OnFocusChangeListener{
     private ShareActionProvider mShareActionProvider;
     private String title = "title";
+    private EditText tvLastname;
+    private EditText tvFirstname;
+    private EditText tvCity;
+    private Button btnSignPetition;
+    private AutoCompleteTextView tvCountry;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_petition);
 
-        if(getIntent() != null && getIntent().getExtras() != null){
+        if (getIntent() != null && getIntent().getExtras() != null) {
             title = getIntent().getStringExtra("title");
         }
         initializeView();
     }
 
     private void initializeView() {
-        EditText tvFirstname = (EditText) findViewById(R.id.tvFirstname);
-        EditText tvLastname = (EditText) findViewById(R.id.tvLastname);
-        EditText tvCity = (EditText) findViewById(R.id.tvCity);
+        tvFirstname = (EditText) findViewById(R.id.tvFirstname);
+        tvFirstname.addTextChangedListener(this);
+        tvFirstname.setOnEditorActionListener(this);
 
-        final TextView tvFirstRequired = (TextView) findViewById(R.id.tvFirstRequired);
-        final ImageView ivStateDropDown = (ImageView) findViewById(R.id.ivStateDropDown);
+        tvLastname = (EditText) findViewById(R.id.tvLastname);
+        tvLastname.addTextChangedListener(this);
+        tvLastname.setOnEditorActionListener(this);
+
+        tvCity = (EditText) findViewById(R.id.tvCity);
+        tvCity.addTextChangedListener(this);
+        tvCity.setOnEditorActionListener(this);
 
         ((TextView) findViewById(R.id.tvPetitionTitle)).setText(title);
-
         ((TextView) findViewById(R.id.tvNeverMind)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
             }
         });
-        //
-        // tvFirstname.setOnEditorActionListener(new OnEditorActionListener() {
-        // @Override
-        // public boolean onEditorAction(TextView v, int actionId,
-        // KeyEvent event) {
-        // boolean handled = false;
-        // if (v.getText().length() > 0) {
-        // tvFirstRequired.setVisibility(TextView.GONE);
-        // } else {
-        // tvFirstRequired.setVisibility(TextView.VISIBLE);
-        // }
-        // return false;
-        // }
-        // });
 
-
+        btnSignPetition = ((Button) findViewById(R.id.btnSignPetition));
+        btnSignPetition.setEnabled(false);
+        btnSignPetition.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),
+                        PetitionSignedActivity.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_right,R.anim.slide_left);
+                finish();
+            }
+        });
         // Get a reference to the AutoCompleteTextView in the layout
-        AutoCompleteTextView textView = (AutoCompleteTextView) findViewById(R.id.tvState);
+        tvCountry = (AutoCompleteTextView) findViewById(R.id.tvCountry);
         // Get the string array
         String[] countries = getResources().getStringArray(R.array.countries_array);
         // Create the adapter and set it to the AutoCompleteTextView
         ArrayAdapter<String> adapter =
                 new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, countries);
-        textView.setAdapter(adapter);
+        tvCountry.setAdapter(adapter);
 
     }
 
@@ -99,13 +111,50 @@ public class PetitionActivity extends ActionBarActivity implements TextWatcher {
 
     @Override
     public void onTextChanged(CharSequence s, int start, int before, int count) {
-        //check if has focus then set background
-//        if (count > 0) s.setBackgroundResource(R.drawable.shape_rect_stroke_blue);
-//        else s.setBackgroundResource(R.drawable.shape_rect_stroke_gray);
+        validateFields();
     }
 
     @Override
     public void afterTextChanged(Editable s) {
 
     }
+
+    @Override
+    public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+        if (actionId == EditorInfo.IME_ACTION_NEXT) {
+            validate(v);
+        } else if (actionId == EditorInfo.IME_ACTION_DONE) {
+            btnSignPetition.requestFocus();
+        }
+        return false;
+    }
+
+    private void validateFields() {
+        validate(tvFirstname);
+        validate(tvLastname);
+        validate(tvCity);
+        validate(tvCountry);
+        ValidationUtil.enableButton(this, btnSignPetition, (ValidationUtil.isFieldNotNull(tvCity) &&
+                ValidationUtil.isFieldNotNull(tvCountry) &&
+                ValidationUtil.isFieldNotNull(tvFirstname) &&
+                ValidationUtil.isFieldNotNull(tvLastname)));
+    }
+
+    @Override
+    public void onFocusChange(View v, boolean hasFocus) {
+        validate(v);
+    }
+
+    private void validate(View v) {
+        if (v instanceof EditText) {
+            if(((EditText)v).getText() != null && ((EditText)v).getText().length() > 0) {
+                ((EditText) v).setError(null);
+                ValidationUtil.addBlueBackground(this, ((EditText) v));
+            }
+        } else {
+            ((EditText)v).setError("Required field");
+            ValidationUtil.addGrayBackground(this,((EditText)v));
+        }
+    }
+
 }

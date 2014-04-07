@@ -14,6 +14,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import org.actnow.utils.ValidationUtil;
+
 import java.util.regex.Pattern;
 
 public class SignInFragment extends Fragment implements TextWatcher, TextView.OnEditorActionListener, View.OnFocusChangeListener {
@@ -21,18 +23,9 @@ public class SignInFragment extends Fragment implements TextWatcher, TextView.On
     EditText username = null;
     EditText password = null;
 
-    private final static Pattern EMAIL_ADDRESS_PATTERN = Pattern.compile(
-            "^(([\\w-]+\\.)+[\\w-]+|([a-zA-Z]{1}|[\\w-]{2,}))@"
-                    + "((([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\\.([0-1]?"
-                    + "[0-9]{1,2}|25[0-5]|2[0-4][0-9])\\."
-                    + "([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\\.([0-1]?"
-                    + "[0-9]{1,2}|25[0-5]|2[0-4][0-9])){1}|"
-                    + "([a-zA-Z]+[\\w-]+\\.)+[a-zA-Z]{2,4})$");
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_login, container, false);
-        getActivity().setTitle("Sign In");
 
         username = ((EditText) view.findViewById(R.id.etUsername));
         username.addTextChangedListener(this);
@@ -59,45 +52,31 @@ public class SignInFragment extends Fragment implements TextWatcher, TextView.On
 
     private void backToMain() {
         FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
-        ft.setCustomAnimations(R.anim.slide_left, R.anim.slide_left);
-        ft.replace(R.id.container, new DocumentaryFragment());
+        ft.setCustomAnimations(R.anim.slide_left, R.anim.slide_right);
+        ft.replace(R.id.container, new FragmentPager(1));
         ft.commit();
     }
 
     private void sendEmail(Editable username, Editable password) {
     }
 
-    private boolean isUsernameValid() {
-        if (username != null && username.getText() != null && username.getText().length() > 0){
-            return EMAIL_ADDRESS_PATTERN.matcher(username.getText().toString()).matches();
-        }
-        return false;
-    }
 
     private void changeBackgroundIfPossible() {
         if (isNotInputFieldEmpty(username)) {
-            addBlueBackground(username);
+            ValidationUtil.addBlueBackground(getActivity(), username);
         } else {
-            addGrayBackground(username);
+            ValidationUtil.addGrayBackground(getActivity(), username);
         }
         if (isNotInputFieldEmpty(password)) {
-            addBlueBackground(password);
+            ValidationUtil.addBlueBackground(getActivity(), password);
         } else {
-            addGrayBackground(password);
+            ValidationUtil.addGrayBackground(getActivity(), password);
         }
 
-        enableLoginButton(isUsernameValid() && isPasswordValid());
+        ValidationUtil.enableButton(getActivity(), signupButton,
+                (ValidationUtil.isEmailAddressValid(username) && ValidationUtil.isFieldNotNull(password)));
     }
 
-    private void addGrayBackground(EditText editText) {
-        editText.setBackgroundResource(R.drawable.shape_rect_stroke_gray);
-        editText.setTextColor(getResources().getColor(R.color.app_gray));
-    }
-
-    private void addBlueBackground(EditText editText) {
-        editText.setBackgroundResource(R.drawable.shape_rect_stroke_blue);
-        editText.setTextColor(getResources().getColor(R.color.app_blue));
-    }
 
     private boolean isNotInputFieldEmpty(EditText editable) {
         return editable != null && editable.getText() != null && editable.getText().length() > 0;
@@ -129,33 +108,18 @@ public class SignInFragment extends Fragment implements TextWatcher, TextView.On
     }
 
     private void validate() {
-        if(isUsernameValid()){
+        if (ValidationUtil.isEmailAddressValid(username)) {
             username.setError(null);
             password.requestFocus();
-        }else{
+        } else {
             username.setError("Please enter a valid email address");
         }
     }
 
-    private void enableLoginButton(boolean enable) {
-        if (enable) {
-            signupButton.setBackgroundResource(R.drawable.shape_rect_solid_red);
-            signupButton.setTextColor(getResources().getColor(R.color.app_white));
-            signupButton.setEnabled(true);
-        } else {
-            signupButton.setBackgroundResource(R.drawable.shape_rect_stroke_gray);
-            signupButton.setTextColor(getResources().getColor(R.color.app_gray));
-            signupButton.setEnabled(false);
-        }
-    }
-
-    public boolean isPasswordValid() {
-        return password != null && password.getText().length() > 0;
-    }
 
     @Override
     public void onFocusChange(View v, boolean hasFocus) {
-        if(R.id.etPassword == v.getId()){
+        if (R.id.etPassword == v.getId()) {
             validate();
         }
     }

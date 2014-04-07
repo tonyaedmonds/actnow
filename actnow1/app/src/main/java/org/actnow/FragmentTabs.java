@@ -17,7 +17,7 @@ public class FragmentTabs extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         mTabHost = new FragmentTabHost(getActivity());
-        mTabHost.setup(getActivity(), getChildFragmentManager(), R.id.fragmentTab);
+        mTabHost.setup(getActivity(), getChildFragmentManager(), R.id.fragmentPetitionTab);
 
         mTabHost.addTab(mTabHost.newTabSpec("summary").setIndicator("Summary"),
                 SummaryFragmentTab.class, null);

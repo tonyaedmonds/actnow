@@ -9008,9 +9008,6 @@ Documentary
 Feed
                     </item>
                     <item>
-Blog
-                    </item>
-                    <item>
 About
                     </item>
                 </string-array>
@@ -9475,6 +9472,11 @@ roboto_slab_thin
                 path="/Users/aodubela/Documents/project/workspace/actnow1/app/src/main/res/anim/slide_left.xml"
                 qualifiers=""
                 type="anim" />
+            <file
+                name="fragment_pager"
+                path="/Users/aodubela/Documents/project/workspace/actnow1/app/src/main/res/layout/fragment_pager.xml"
+                qualifiers=""
+                type="layout" />
         </source>
         <source path="/Users/aodubela/Documents/project/workspace/actnow1/app/build/res/rs/debug" />
         <source path="/Users/aodubela/Documents/project/workspace/actnow1/app/build/res/generated/debug" />

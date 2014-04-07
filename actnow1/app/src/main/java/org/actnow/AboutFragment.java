@@ -42,22 +42,13 @@ public class AboutFragment extends Fragment {
         ViewGroup rootView = (ViewGroup) inflater.inflate(
                 R.layout.fragment_about, container, false);
 
-getActivity().setTitle("About");
         TextView textView2 = (TextView) rootView.findViewById(R.id.tvSwipeLeft);
         SpannableStringBuilder ssb = new SpannableStringBuilder(textView2.getText());
         int length = textView2.getText().length();
-        String text = getResources().getString(R.string.swipeLeft2);
 
         Bitmap arrow = BitmapFactory.decodeResource(getResources(), R.drawable.ic_action_reverse);
         ssb.setSpan(new ImageSpan(arrow), length - 29, length - 24, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
-//        ssb.append(text);
         textView2.setText(ssb, TextView.BufferType.SPANNABLE);
-
-        if(ActnowApp.aboutViewed){
-            textView2.setVisibility(TextView.GONE);
-        }else{
-            ActnowApp.aboutViewed = true;
-        }
 
         //create round image
         ImageView ivImage1 = (ImageView) rootView.findViewById(R.id.ivImage1);

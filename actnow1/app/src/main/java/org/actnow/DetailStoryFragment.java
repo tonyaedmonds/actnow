@@ -1,5 +1,6 @@
 package org.actnow;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
@@ -8,6 +9,7 @@ import android.support.v4.app.FragmentTabHost;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -16,7 +18,6 @@ public class DetailStoryFragment extends Fragment {
     TextView tvDetailStory = null;
     int storyId = -1;
     Handler handler;
-    View rootView = null;
     private ProgressBar pbLoadStory;
 
     @Override
@@ -35,8 +36,20 @@ public class DetailStoryFragment extends Fragment {
         new LoadStoryAsyncTask().execute();
 
 
-        ((TextView) (rootView.findViewById(R.id.detailStoryTitle))).setText( arguments.getString("title"));
+        final TextView detailStoryTitle = ((TextView) (rootView.findViewById(R.id.detailStoryTitle)));
+        detailStoryTitle.setText(arguments.getString("title"));
         ((TextView) (rootView.findViewById(R.id.tvSource))).setText(arguments.getString("source"));
+
+        Button btnSignPetitionDetail = ((Button) rootView.findViewById(R.id.btnSignPetitionDetail));
+        btnSignPetitionDetail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(),
+                        PetitionActivity.class);
+                intent.putExtra("title", detailStoryTitle.getText().toString());
+                startActivity(intent);
+            }
+        });
 
         return rootView;
     }

@@ -43,9 +43,6 @@ public class FeedFragment extends Fragment implements View.OnClickListener {
         new BitmapWorkerTask(ivStory2, getActivity().getResources()).execute(R.drawable.anas2);
         new BitmapWorkerTask(ivStory3, getActivity().getResources()).execute(R.drawable.anas_3);
 
-        getActivity().setTitle("Documentary");
-
-
         return view;
     }
 
@@ -87,9 +84,9 @@ public class FeedFragment extends Fragment implements View.OnClickListener {
         bundle.putString("source", source);
 
         fragment.setArguments(bundle);
-
         transaction.replace(R.id.container, fragment);
         transaction.addToBackStack(null);
         transaction.commit();
+
     }
 }

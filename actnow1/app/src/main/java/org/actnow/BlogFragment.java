@@ -11,8 +11,6 @@ public class BlogFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        getActivity().setTitle("Blog");
-
         return inflater.inflate(R.layout.fragment_blog, container, false);
     }
 

@@ -54,7 +54,7 @@ public class NavigationDrawerFragment extends Fragment {
     private ListView mDrawerListView;
     private View mFragmentContainerView;
 
-    private int mCurrentSelectedPosition = 4;
+    private int mCurrentSelectedPosition = 3;
     private boolean mFromSavedInstanceState;
     private boolean mUserLearnedDrawer;
 
@@ -98,11 +98,7 @@ public class NavigationDrawerFragment extends Fragment {
             }
         });
         final String[] menuArray = getResources().getStringArray(R.array.drawer_menu_array);
-        if(ActnowApp.isAuthenticated()){
-            menuArray[0] = "Sign Out";
-        }else{
-            menuArray[0] = "Sign In";
-        }
+
         mDrawerListView.setAdapter(new ArrayAdapter<String>(
                 getActionBar().getThemedContext(),
                 android.R.layout.simple_list_item_1,

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTabHost;
 import android.text.Html;
 import android.view.LayoutInflater;
@@ -11,20 +12,19 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.awt.font.TextAttribute;
 
 public class DocumentaryFragment extends Fragment {
-    private FragmentTabHost mTabHost;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup) inflater.inflate(
                 R.layout.fragment_documentary, container, false);
-        getActivity().setTitle("Documentary");
         initializeView(rootView);
         return rootView;
     }
@@ -41,8 +41,9 @@ public class DocumentaryFragment extends Fragment {
                 System.out.println("Starting activity for signPetition");
                 final Intent intent = new Intent(getActivity(),
                         PetitionActivity.class);
-                intent.putExtra("title",tvDocTitle.getText().toString());
+                intent.putExtra("title", tvDocTitle.getText().toString());
                 startActivity(intent);
+                getActivity().overridePendingTransition(R.anim.abc_slide_in_bottom,R.anim.abc_slide_out_top);
             }
         });
         ImageView playButton = (ImageView) rootView.findViewById(R.id.wallPaper);
@@ -55,12 +56,8 @@ public class DocumentaryFragment extends Fragment {
             }
         });
 
-//        mTabHost = (FragmentTabHost)rootView.findViewById(R.id.tabFragment);
-//        mTabHost.setup(getActivity(), getChildFragmentManager(), R.id.tabFragment);
-//
-//        mTabHost.addTab(mTabHost.newTabSpec("update").setIndicator("UPDATE"),
-//                UpdateFragmentTab.class, null);
-//        mTabHost.addTab(mTabHost.newTabSpec("summary").setIndicator("SUMMARY"),
-//                SummaryFragmentTab.class, null);
+        getActivity().getSupportFragmentManager().beginTransaction()
+                .add(R.id.fragmentPetitionTab, new FragmentTabs()).commit();
     }
+
 }

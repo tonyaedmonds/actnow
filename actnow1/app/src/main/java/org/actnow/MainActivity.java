@@ -3,6 +3,8 @@ package org.actnow;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
@@ -23,9 +25,11 @@ public class MainActivity extends ActionBarActivity
      */
     private CharSequence mTitle;
 
-    String menu_array[];
+    private String menu_array[];
 
-    @Override
+    private FragmentPager fragmentPager = null;
+
+     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -39,12 +43,13 @@ public class MainActivity extends ActionBarActivity
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
+
+
     }
 
     @Override
     public void onNavigationDrawerItemSelected(int position) {
         if(ActnowApp.isAuthenticated() && position == 0){
-            mTitle = "Sign Out";
             ActnowApp.setAuthenticated(false);
             finish();
         }else{
@@ -54,8 +59,6 @@ public class MainActivity extends ActionBarActivity
                     .replace(R.id.container, getSelectedFragment(position)).addToBackStack(null)
                     .commit();
         }
-
-
     }
 
     private Fragment getSelectedFragment(int position) {
@@ -64,19 +67,23 @@ public class MainActivity extends ActionBarActivity
         switch (position) {
             case 0:
                 fragment = new SignInFragment();
+                mTitle = "Sign In";
                 break;
             case 1:
-                fragment = new DocumentaryFragment();
+                fragment = new FragmentPager(1);
+                mTitle = "Documentary";
                 break;
             case 2:
                 fragment = new FeedFragment();
-
-                break;
+                mTitle = "Feed";
+                        break;
+//            case 3:
+//                fragment = new BlogFragment();
+//                mTitle = "Blog";
+//                break;
             case 3:
-                fragment = new BlogFragment();
-                break;
-            case 4:
-                fragment = new AboutFragment();
+                fragment = new FragmentPager(0);
+                mTitle = "About";
                 break;
             default:
                 break;
@@ -125,5 +132,4 @@ public class MainActivity extends ActionBarActivity
         }
         return super.onOptionsItemSelected(item);
     }
-
 }

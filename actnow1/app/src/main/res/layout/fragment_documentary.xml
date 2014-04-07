@@ -81,13 +81,12 @@
             android:text="2,783 supporters"
             android:textSize="14sp" />
 
-        <fragment
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/tvFirstRequired"
             android:layout_margin="@dimen/form_margin"
-            android:id="@+id/fragmentTab"
-            class="org.actnow.FragmentTabs"
+            android:id="@+id/fragmentPetitionTab"
             />
     </RelativeLayout>
 
