@@ -8934,7 +8934,7 @@ Coming up: Tomorrow, we bring you the story of how GCNet, Ghana Ports and Harbou
 				 for these crimes.  During the three weeks that I worked on this story, I came across 10 men who were willing to kill a baby for spiritual 
 				 reasons. They were easy to find. Yet when I asked a senior police officer why no arrests have been made, his response was]]>
                 </string>
-                <string name="contentDescription" >actNow Image
+                <string name="contentDescription" >actNOW Image
                 </string>
                 <string name="petition_signed" >Petition signed!
                 </string>
@@ -8990,8 +8990,6 @@ Western (Sekondi-Takoradi)
                 </string>
                 <string name="navigation_drawer_open" >Open navigation drawer
                 </string>
-                <string name="hello_world" >Hello world!
-                </string>
                 <string name="petitionTitle" >Title fashion axe freegan direct trade Neutra kitsch Ennui.
                 </string>
                 <string name="action_settings" >Settings
@@ -9012,7 +9010,7 @@ About
                     </item>
                 </string-array>
 
-                <string name="app_name" >actnow
+                <string name="app_name" >actNOW
                 </string>
                 <string name="storySource1" >Source: New Crusading Guide | February 2, 2011
                 </string>
@@ -9477,6 +9475,11 @@ roboto_slab_thin
                 path="/Users/aodubela/Documents/project/workspace/actnow1/app/src/main/res/layout/fragment_pager.xml"
                 qualifiers=""
                 type="layout" />
+            <file
+                name="docum_img_bg"
+                path="/Users/aodubela/Documents/project/workspace/actnow1/app/src/main/res/drawable/docum_img_bg.png"
+                qualifiers=""
+                type="drawable" />
         </source>
         <source path="/Users/aodubela/Documents/project/workspace/actnow1/app/build/res/rs/debug" />
         <source path="/Users/aodubela/Documents/project/workspace/actnow1/app/build/res/generated/debug" />

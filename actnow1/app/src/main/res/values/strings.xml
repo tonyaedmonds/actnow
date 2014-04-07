@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">actnow</string>
+    <string name="app_name">actNOW</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
     <string name="title_activity_story">story</string>
     <string name="title_activity_splash">SplashActivity</string>
     <string name="title_activity_about">AboutActivity</string>
@@ -20,7 +19,7 @@
     <string name="swipeLeft">Our first documentary recently launched. Swipe left arrow to see our latest work.</string>
     <string name="swipeLeft2"> to see our latest work.</string>
     <string name="aboutUsMessage">What we do and why...</string>
-    <string name="contentDescription">actNow Image</string>
+    <string name="contentDescription">actNOW Image</string>
     <string name="petitionTitle">Title fashion axe freegan direct trade Neutra kitsch Ennui.</string>
     <string name="spell_of_albino_story"><![CDATA[Albinism is a non-contagious, genetically inherited disorder, affecting about 1 in 20,000 men and women around the world, regardless of ethnicity and geographical location. Sufferers are afflicted by a congenital absence of melanin, a pigmentation defect in the hair, skin and eyes that causes vulnerability to sun exposure and bright light. Many have very poor vision as a consequence and in tropical countries especially they can be vulnerable to skin cancers if unprotected from the sun.
 

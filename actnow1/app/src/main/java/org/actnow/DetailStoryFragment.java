@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTabHost;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,7 +34,7 @@ public class DetailStoryFragment extends Fragment {
         storyId = arguments.getInt("storyId");
 
         tvDetailStory = ((TextView) (rootView.findViewById(R.id.tvDetailStory)));
-        new LoadStoryAsyncTask().execute();
+        tvDetailStory.setText(Html.fromHtml(getStory()));
 
 
         final TextView detailStoryTitle = ((TextView) (rootView.findViewById(R.id.detailStoryTitle)));
@@ -81,13 +82,13 @@ public class DetailStoryFragment extends Fragment {
         String story = null;
         switch (storyId) {
             case R.id.ivStory1:
-                story = getResources().getString(R.string.enemies_of_the_nation_story);
+                story = ActnowApp.getEnemiesOfANationStory();
                 break;
             case R.id.ivStory2:
                 story = ActnowApp.getChineseMafiaStory();
                 break;
             case R.id.ivStory3:
-                story = getString(R.string.journalist_face_to_face_with_chinese_sex_mafia);
+                story = ActnowApp.getJournalistFaceToFaceStory();
                 break;
             default:
                 break;

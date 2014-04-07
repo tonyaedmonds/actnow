@@ -73,7 +73,7 @@
 
         <Button
             android:id="@+id/btnLogin"
-            style="@style/buttonDefault"
+            style="@style/redButtonSolid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/etPassword"

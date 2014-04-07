@@ -22,7 +22,7 @@
                 android:layout_height="@dimen/image_size_holder"
                 android:contentDescription="@string/contentDescription"
                 android:scaleType="centerCrop"
-                android:src="@drawable/image_holder" />
+                android:src="@drawable/docum_img_bg" />
 
             <ImageView
                 android:id="@+id/playButton"

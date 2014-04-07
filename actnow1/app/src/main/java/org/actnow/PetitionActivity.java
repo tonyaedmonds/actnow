@@ -82,6 +82,7 @@ public class PetitionActivity extends ActionBarActivity implements TextWatcher, 
         ArrayAdapter<String> adapter =
                 new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, countries);
         tvCountry.setAdapter(adapter);
+        tvCountry.setOnFocusChangeListener(this);
 
     }
 

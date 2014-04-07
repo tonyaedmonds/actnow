@@ -37,13 +37,14 @@ public class SignInFragment extends Fragment implements TextWatcher, TextView.On
         password.setOnFocusChangeListener(this);
 
         signupButton = (Button) view.findViewById(R.id.btnLogin);
-        signupButton.setEnabled(false);
         signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sendEmail(username.getText(), password.getText());
-                ActnowApp.setAuthenticated(true);
-                backToMain();
+                if(ValidationUtil.isEmailAddressValid(username) && ValidationUtil.isFieldNotNull(password)) {
+                    sendEmail(username.getText(), password.getText());
+                    ActnowApp.setAuthenticated(true);
+                    backToMain();
+                }
             }
         });
 
@@ -73,8 +74,8 @@ public class SignInFragment extends Fragment implements TextWatcher, TextView.On
             ValidationUtil.addGrayBackground(getActivity(), password);
         }
 
-        ValidationUtil.enableButton(getActivity(), signupButton,
-                (ValidationUtil.isEmailAddressValid(username) && ValidationUtil.isFieldNotNull(password)));
+//        ValidationUtil.enableButton(getActivity(), signupButton,
+//                (ValidationUtil.isEmailAddressValid(username) && ValidationUtil.isFieldNotNull(password)));
     }
 
 
