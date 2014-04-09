@@ -15,11 +15,18 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
+
+    android {
+        packagingOptions {
+            exclude 'META-INF/LICENSE.txt'
+        }
+    }
 }
 
 dependencies {
     compile 'com.android.support:support-v4:+'
     compile 'com.android.support:appcompat-v7:+'
-//    compile 'javax.mail:mail:1.4.7'
-//    compile 'javax.activation:activation:+'
+    compile files('/Users/aodubela/Documents/project/workspace/actnow1/libs/mail.jar')
+    compile files('/Users/aodubela/Documents/project/workspace/actnow1/libs/additionnal.jar')
+    compile files('/Users/aodubela/Documents/project/workspace/actnow1/libs/activation.jar')
 }

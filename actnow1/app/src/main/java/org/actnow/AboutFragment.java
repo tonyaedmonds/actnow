@@ -56,7 +56,7 @@ public class AboutFragment extends Fragment {
 
         ImageView ivImage2 = (ImageView) rootView.findViewById(R.id.ivImage2);
         ivImage2.setImageBitmap(getRoundedBitmap(ivImage2.getDrawable()));
-
+        getActivity().setTitle("About");
         return rootView;
     }
 

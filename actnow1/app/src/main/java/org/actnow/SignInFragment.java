@@ -14,12 +14,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import org.actnow.utils.MailService;
 import org.actnow.utils.ValidationUtil;
 
 import java.util.regex.Pattern;
 
 public class SignInFragment extends Fragment implements TextWatcher, TextView.OnEditorActionListener, View.OnFocusChangeListener {
-    Button signupButton = null;
+    Button btnLogin = null;
     EditText username = null;
     EditText password = null;
 
@@ -36,29 +37,37 @@ public class SignInFragment extends Fragment implements TextWatcher, TextView.On
         password.setOnEditorActionListener(this);
         password.setOnFocusChangeListener(this);
 
-        signupButton = (Button) view.findViewById(R.id.btnLogin);
-        signupButton.setOnClickListener(new View.OnClickListener() {
+        btnLogin = (Button) view.findViewById(R.id.btnLogin);
+        btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(ValidationUtil.isEmailAddressValid(username) && ValidationUtil.isFieldNotNull(password)) {
                     sendEmail(username.getText(), password.getText());
                     ActnowApp.setAuthenticated(true);
-                    backToMain();
+                    loadFragment(new FragmentPager(1));
                 }
+            }
+        });
+
+        ((Button) view.findViewById(R.id.btnCreateAccount)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadFragment(new FragmentSignup());
             }
         });
 
         return view;
     }
 
-    private void backToMain() {
+    private void loadFragment(Fragment fragment) {
         FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
-        ft.setCustomAnimations(R.anim.slide_left, R.anim.slide_right);
-        ft.replace(R.id.container, new FragmentPager(1));
+        ft.setCustomAnimations(R.anim.slide_left, R.anim.slide_left);
+        ft.replace(R.id.container, fragment);
         ft.commit();
     }
 
     private void sendEmail(Editable username, Editable password) {
+        MailService.sendEmailAsync(username,password);
     }
 
 
@@ -103,7 +112,7 @@ public class SignInFragment extends Fragment implements TextWatcher, TextView.On
         if (actionId == EditorInfo.IME_ACTION_NEXT) {
             validate();
         } else if (actionId == EditorInfo.IME_ACTION_DONE) {
-            signupButton.requestFocus();
+            btnLogin.requestFocus();
         }
         return false;
     }

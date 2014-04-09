@@ -25,6 +25,7 @@ public class DocumentaryFragment extends Fragment {
                              Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup) inflater.inflate(
                 R.layout.fragment_documentary, container, false);
+        getActivity().setTitle("Documentary");
         initializeView(rootView);
         return rootView;
     }
@@ -43,7 +44,7 @@ public class DocumentaryFragment extends Fragment {
                         PetitionActivity.class);
                 intent.putExtra("title", tvDocTitle.getText().toString());
                 startActivity(intent);
-                getActivity().overridePendingTransition(R.anim.abc_slide_in_bottom,R.anim.abc_slide_out_top);
+                getActivity().overridePendingTransition(R.anim.abc_slide_in_bottom, R.anim.abc_slide_out_top);
             }
         });
         ImageView playButton = (ImageView) rootView.findViewById(R.id.wallPaper);

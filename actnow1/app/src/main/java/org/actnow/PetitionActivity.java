@@ -70,7 +70,7 @@ public class PetitionActivity extends ActionBarActivity implements TextWatcher, 
                 Intent intent = new Intent(getApplicationContext(),
                         PetitionSignedActivity.class);
                 startActivity(intent);
-                overridePendingTransition(R.anim.slide_right,R.anim.slide_left);
+                overridePendingTransition(R.anim.slide_left,R.anim.slide_left);
                 finish();
             }
         });
@@ -125,6 +125,7 @@ public class PetitionActivity extends ActionBarActivity implements TextWatcher, 
         if (actionId == EditorInfo.IME_ACTION_NEXT) {
             validate(v);
         } else if (actionId == EditorInfo.IME_ACTION_DONE) {
+            validate(v);
             btnSignPetition.requestFocus();
         }
         return false;
@@ -135,10 +136,10 @@ public class PetitionActivity extends ActionBarActivity implements TextWatcher, 
         validate(tvLastname);
         validate(tvCity);
         validate(tvCountry);
-        ValidationUtil.enableButton(this, btnSignPetition, (ValidationUtil.isFieldNotNull(tvCity) &&
-                ValidationUtil.isFieldNotNull(tvCountry) &&
-                ValidationUtil.isFieldNotNull(tvFirstname) &&
-                ValidationUtil.isFieldNotNull(tvLastname)));
+//        ValidationUtil.enableButton(this, btnSignPetition, (ValidationUtil.isFieldNotNull(tvCity) &&
+//                ValidationUtil.isFieldNotNull(tvCountry) &&
+//                ValidationUtil.isFieldNotNull(tvFirstname) &&
+//                ValidationUtil.isFieldNotNull(tvLastname)));
     }
 
     @Override

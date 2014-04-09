@@ -1,5 +1,6 @@
 package org.actnow;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -20,6 +21,9 @@ public class DetailStoryFragment extends Fragment {
     int storyId = -1;
     Handler handler;
     private ProgressBar pbLoadStory;
+    private String enemies;
+    private String mafia;
+    private String face;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -34,8 +38,9 @@ public class DetailStoryFragment extends Fragment {
         storyId = arguments.getInt("storyId");
 
         tvDetailStory = ((TextView) (rootView.findViewById(R.id.tvDetailStory)));
-        tvDetailStory.setText(Html.fromHtml(getStory()));
+//        tvDetailStory.setText(Html.fromHtml(enemies));
 
+        new LoadStoryAsyncTask().execute();
 
         final TextView detailStoryTitle = ((TextView) (rootView.findViewById(R.id.detailStoryTitle)));
         detailStoryTitle.setText(arguments.getString("title"));
@@ -49,6 +54,7 @@ public class DetailStoryFragment extends Fragment {
                         PetitionActivity.class);
                 intent.putExtra("title", detailStoryTitle.getText().toString());
                 startActivity(intent);
+                    getActivity().overridePendingTransition(R.anim.abc_slide_in_bottom,R.anim.abc_slide_out_top);
             }
         });
 
@@ -57,11 +63,8 @@ public class DetailStoryFragment extends Fragment {
 
     class LoadStoryAsyncTask extends AsyncTask<Void, Void, Void> {
 
-        String s = null;
-
         @Override
         protected Void doInBackground(Void... params) {
-            s = getStory();
             return null;
         }
 
@@ -70,7 +73,7 @@ public class DetailStoryFragment extends Fragment {
             handler.post(new Runnable() {
                 @Override
                 public void run() {
-                    tvDetailStory.setText(s);
+                    tvDetailStory.setText(Html.fromHtml(getStory()));
                     pbLoadStory.setVisibility(ProgressBar.GONE);
                 }
             });
@@ -82,18 +85,19 @@ public class DetailStoryFragment extends Fragment {
         String story = null;
         switch (storyId) {
             case R.id.ivStory1:
-                story = ActnowApp.getEnemiesOfANationStory();
+                story = ActnowApp.getEnemiesOfTheNationStory(getResources());
                 break;
             case R.id.ivStory2:
-                story = ActnowApp.getChineseMafiaStory();
+                story = ActnowApp.getChineseMafiaStory(getResources());
                 break;
             case R.id.ivStory3:
-                story = ActnowApp.getJournalistFaceToFaceStory();
+                story = ActnowApp.getJournalistFaceToFaceStory(getResources());
                 break;
             default:
                 break;
         }
         return story;
     }
+
 
 }

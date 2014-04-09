@@ -17,6 +17,8 @@ public class FragmentPager extends Fragment {
     private ViewPager mPager;
     private PagerAdapter mPagerAdapter;
 
+    public FragmentPager(){}
+
     public FragmentPager(int currentPage) {
         this.currentPage = currentPage;
     }
