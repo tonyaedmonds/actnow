@@ -1,50 +1,125 @@
 package org.actnow;
 
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ActionBarActivity implements
+		NavigationDrawerFragment.NavigationDrawerCallbacks {
 
-	private static final String ABOUT_SCREEN_VIEWED = "about_screen_viewed";
-	private ViewPager mPager;
-	private PagerAdapter mPagerAdapter;
-	public static final String PREFS_NAME = "aboutScreenPref";
+	/**
+	 * Fragment managing the behaviors, interactions and presentation of the
+	 * navigation drawer.
+	 */
+	private NavigationDrawerFragment mNavigationDrawerFragment;
+
+	/**
+	 * Used to store the last screen title. For use in
+	 * {@link #restoreActionBar()}.
+	 */
+	private CharSequence mTitle;
+
+	private String menu_array[];
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-		ActnowApp.setContext(this);
-		mPager = (ViewPager) findViewById(R.id.pager);
-		mPagerAdapter = new StoryPagerAdapter(getSupportFragmentManager());
-		mPager.setAdapter(mPagerAdapter);
+		mNavigationDrawerFragment = (NavigationDrawerFragment) getSupportFragmentManager()
+				.findFragmentById(R.id.navigation_drawer);
+		mTitle = getTitle();
 
-		SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
-		SharedPreferences.Editor editor = settings.edit();
-		editor.putBoolean(ABOUT_SCREEN_VIEWED, true);
-		editor.commit();
+		// Set up the drawer.
+		mNavigationDrawerFragment.setUp(R.id.navigation_drawer,
+				(DrawerLayout) findViewById(R.id.drawer_layout));
+
+	}
+
+	@Override
+	public void onNavigationDrawerItemSelected(int position) {
+		// update the main content by replacing fragments
+		FragmentManager fragmentManager = getSupportFragmentManager();
+		fragmentManager.beginTransaction()
+				.replace(R.id.container, getSelectedFragment(position))
+				.commit();
+	}
+
+	private Fragment getSelectedFragment(int position) {
+		Fragment fragment = null;
+		Bundle bundle = new Bundle();
+
+		switch (position) {
+		case 0:
+			fragment = new SignInFragment();
+			mTitle = "Sign In";
+			break;
+		case 1:
+			fragment = new FragmentPager();
+			bundle.putInt("page", 1);
+			fragment.setArguments(bundle);
+			mTitle = "Documentary";
+			break;
+		case 2:
+			fragment = new FeedFragment();
+			mTitle = "Feed";
+			break;
+		case 3:
+			fragment = new FragmentPager();
+			bundle.putInt("page", 0);
+			fragment.setArguments(bundle);
+			mTitle = "About";
+			break;
+		default:
+			break;
+		}
+		return fragment;
+	}
+
+	public void onSectionAttached(int number) {
+		if (menu_array == null) {
+			menu_array = getResources().getStringArray(
+					R.array.drawer_menu_array);
+		}
+		if (menu_array != null && number < menu_array.length) {
+			mTitle = menu_array[number];
+		}
+	}
+
+	public void restoreActionBar() {
+		ActionBar actionBar = getSupportActionBar();
+		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
+		actionBar.setDisplayShowTitleEnabled(true);
+		actionBar.setTitle(mTitle);
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.main, menu);
+		if (!mNavigationDrawerFragment.isDrawerOpen()) {
+			// Only show items in the action bar relevant to this screen
+			// if the drawer is not showing. Otherwise, let the drawer
+			// decide what to show in the action bar.
+			getMenuInflater().inflate(R.menu.main, menu);
+			restoreActionBar();
+			return true;
+		}
 		return super.onCreateOptionsMenu(menu);
 	}
 
-	public void onMenuClick(MenuItem item) {
-		if (R.id.action_blog == item.getItemId()) {
-			startActivity(new Intent(getApplicationContext(),
-					BlogActivity.class));
-		} else if (R.id.action_sign_in == item.getItemId()) {
-			startActivity(new Intent(getApplicationContext(),
-					SignInActivity.class));
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// Handle action bar item clicks here. The action bar will
+		// automatically handle clicks on the Home/Up button, so long
+		// as you specify a parent activity in AndroidManifest.xml.
+		int id = item.getItemId();
+		if (id == R.id.action_settings) {
+			return true;
 		}
+		return super.onOptionsItemSelected(item);
 	}
 }

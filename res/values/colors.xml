@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="app_blue">#24C1E4</color>
-    <color name="red">#FF4444</color>
-    <color name="btn_red">#EE522F</color>
-    <color name="dark_red">#CC0000</color>
-    <color name="black">#000000</color>
-    <color name="gray">#ddd</color>
+    <color name="app_white">#f8f8f8</color>
+    <color name="app_red">#ee522f</color>
+    <color name="app_blue">#24c1e4</color>
+    <color name="app_gray">#a8a8a8</color>
+    <color name="app_black">#232323</color>
+
+    <!-- colors for button state -->
+    <color name="app_red_pressed">#ee524f</color>
+    <color name="app_red_focused">#ee521f</color>
+
+    <!-- colors for Blog, Petition, About -->
+    <color name="text_title_color">#313131</color>
+    <color name="text_body_color">#313131</color>
+    <color name="text_meta_color">@color/app_gray</color>
+
+    <!-- colors for Forms -->
+    <color name="form_text_hint_color">#b4b4b4</color>
+    <color name="form_text_body_color">@color/app_blue</color>
+    <color name="form_text_meta_color">@color/app_white</color>
 
 </resources>

@@ -1,48 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:paddingBottom="@dimen/activity_vertical_margin" >
+        android:paddingBottom="@dimen/activity_vertical_margin">
 
         <FrameLayout
             android:id="@+id/flPlayerContainer"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true" >
+            android:layout_alignParentTop="true">
 
             <ImageView
                 android:id="@+id/wallPaper"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/image_size_holder"
                 android:contentDescription="@string/contentDescription"
                 android:scaleType="centerCrop"
-                android:src="@drawable/image_holder" />
+                android:src="@drawable/docum_img_bg" />
 
             <ImageView
                 android:id="@+id/playButton"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:layout_gravity="center"
                 android:contentDescription="@string/contentDescription"
-                android:src="@drawable/ic_action_play_over_video" />
+                android:src="@drawable/ic_play_over_button" />
         </FrameLayout>
 
         <org.actnow.utils.RobotoFont
             android:id="@+id/tvDocTitle"
-            style="@style/roboto_medium"
+            style="@style/textTitleStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/flPlayerContainer"
-            android:layout_margin="16dp"
-            android:text="Title fashion axe freegan direct trade Neutra kitsch Ennui."
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            android:layout_margin="@dimen/form_margin"
+            android:text="@string/doc_title"
+             />
 
         <Button
             android:id="@+id/btnDocSign"
@@ -57,9 +56,9 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_below="@+id/btnDocSign"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:background="@color/gray" />
+            android:layout_marginLeft="@dimen/form_margin"
+            android:layout_marginRight="@dimen/form_margin"
+            android:background="@color/app_gray" />
 
         <View
             android:id="@+id/ivGrayBreak2"
@@ -67,68 +66,29 @@
             android:layout_height="1dp"
             android:layout_below="@+id/ivGrayBreak1"
             android:layout_marginBottom="8dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
+            android:layout_marginLeft="@dimen/form_margin"
+            android:layout_marginRight="@dimen/form_margin"
             android:layout_marginTop="0.25dp"
-            android:background="@color/gray" />
+            android:background="@color/app_gray" />
 
-        <LinearLayout
-            android:id="@+id/llSupporterContainer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+        <org.actnow.utils.RobotoFont
+            android:id="@+id/tvFirstRequired"
+            style="@style/textMetaStyle"
             android:layout_below="@+id/ivGrayBreak2"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp" >
+            android:layout_marginLeft="@dimen/form_margin"
+            android:layout_marginRight="@dimen/form_margin"
+            android:layout_weight="0.5"
+            android:text="2,783 supporters"
+            android:visibility="gone"
+            android:textSize="14sp" />
 
-            <org.actnow.utils.RobotoFont
-                android:id="@+id/tvFirstRequired"
-                style="@style/textDefault"
-                android:layout_weight="0.5"
-                android:text="2,783 supporters"
-                android:textSize="14sp" />
-
-            <org.actnow.utils.RobotoFont
-                style="@style/socialText"
-                android:background="@drawable/shape_rect_solid_red"
-                android:gravity="center_horizontal"
-                android:text="g" />
-
-            <org.actnow.utils.RobotoFont
-                style="@style/socialText"
-                android:text="f" />
-            <!--
-            android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:background="@drawable/shape_rect_gray"
-                android:gravity="right|center_vertical"
-                android:paddingRight="5dp"
-            android:textColor="@android:color/white"
-                android:textStyle="bold"
-            -->
-        </LinearLayout>
-
-        <LinearLayout
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/llSupporterContainer"
-            android:layout_margin="@dimen/activity_vertical_margin"
-            android:orientation="vertical" >
-
-            <fragment
-                android:id="@+id/fragment_blog"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                class="org.actnow.BlogPostFragment"
-                tools:layout="@layout/fragment_blog_post" />
-
-            <fragment
-                android:id="@+id/fragment_blog2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                class="org.actnow.BlogPostFragment"
-                tools:layout="@layout/fragment_blog_post" />
-        </LinearLayout>
+            android:layout_below="@id/tvFirstRequired"
+            android:layout_margin="@dimen/form_margin"
+            android:id="@+id/fragmentPetitionTab"
+            />
     </RelativeLayout>
 
 </ScrollView>

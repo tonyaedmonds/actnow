@@ -2,19 +2,6 @@
     xmlns:actnowapp="http://schemas.android.com/apk/res-auto" >
 
     <item
-        android:id="@+id/action_sign_in"
-        actnowapp:showAsAction="never"
-        android:onClick="onMenuClick"
-        android:orderInCategory="100"
-        android:title="@string/action_signin"/>
-    <item
-        android:id="@+id/action_blog"
-        actnowapp:showAsAction="ifRoom"
-        android:icon="@drawable/ic_action_edit"
-        android:onClick="onMenuClick"
-        android:orderInCategory="50"
-        android:title="@string/action_blog"/>
-    <item
         android:id="@+id/action_settings"
         android:orderInCategory="200"
         android:showAsAction="never"

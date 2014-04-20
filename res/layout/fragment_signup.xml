@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/app_black">
+    android:layout_height="match_parent">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -10,31 +9,22 @@
         android:orientation="vertical"
         android:padding="@dimen/activity_vertical_margin">
 
-        <org.actnow.utils.RobotoFont
-            android:id="@+id/tvPetitionTitle"
-            style="@style/textTitleStyle"
-            android:layout_marginBottom="@dimen/activity_vertical_margin"
-            android:layout_marginTop="48dp"
-            android:contentDescription="@string/contentDescription"
-            android:text="@string/petitionTitle"
-            android:textColor="@color/app_white" />
+        <ImageView
+            android:id="@+id/ivActnowLogo"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="36dp"
+            android:src="@drawable/fist_signin" />
 
-        <org.actnow.utils.RobotoFont
-            android:id="@+id/tvPetitionStory"
-            style="@style/textBodyStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tvPetitionTitle"
-            android:layout_marginBottom="@dimen/activity_vertical_margin"
-            android:text="By signing this petition you are ensuring that your voice will be heard thank you for actingNOW."
-            android:textColor="@color/app_white" />
 
         <View
             android:id="@+id/ivGrayBreak1"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
-            android:layout_below="@+id/tvPetitionStory"
-            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:layout_below="@+id/ivActnowLogo"
+            android:layout_marginTop="48dp"
             android:background="@color/app_red" />
 
         <View
@@ -47,28 +37,31 @@
             android:background="@color/app_red" />
 
         <org.actnow.utils.RobotoFont
-            android:id="@+id/tvSignPetition"
+            android:id="@+id/tvSignUp"
             style="@style/signPetitionRed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/ivGrayBreak2"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"
             android:layout_marginTop="8dp"
-            android:text="Sign Petition" />
+            android:text="Sign Up" />
 
         <EditText
             android:id="@+id/tvFirstname"
             style="@style/formHintStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tvSignPetition"
+            android:layout_below="@+id/tvSignUp"
             android:layout_marginTop="@dimen/stepMargin"
             android:ems="10"
             android:hint="Firstname"
             android:imeOptions="actionNext"
             android:inputType="text"
             android:maxLength="50"
-            android:singleLine="true" />
+            android:singleLine="true">
+
+            <requestFocus />
+        </EditText>
 
         <EditText
             android:id="@+id/tvLastname"
@@ -83,71 +76,50 @@
             android:singleLine="true" />
 
         <EditText
-            android:id="@+id/tvCity"
+            android:id="@+id/tvEmail"
             style="@style/formHintStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvLastname"
-            android:hint="City"
+            android:hint="Email"
             android:imeOptions="actionNext"
-            android:inputType="text"
+            android:inputType="textEmailAddress"
             android:maxLength="50"
             android:singleLine="true" />
 
-        <AutoCompleteTextView
-            android:id="@+id/tvCountry"
+        <EditText
+            android:id="@+id/tvPhone"
             style="@style/formHintStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tvCity"
+            android:layout_below="@+id/tvEmail"
             android:layout_marginBottom="@dimen/activity_vertical_margin"
-            android:hint="Country"
+            android:hint="Phone Number"
             android:imeOptions="actionDone"
-            android:inputType="text"
+            android:inputType="phone"
             android:maxLength="50"
             android:singleLine="true" />
 
         <org.actnow.utils.RobotoFont
             style="@style/textMetaStyle"
-            android:layout_alignBaseline="@+id/tvSignPetition"
-            android:layout_alignBottom="@+id/tvSignPetition"
+            android:layout_alignBaseline="@+id/tvSignUp"
+            android:layout_alignBottom="@+id/tvSignUp"
             android:layout_alignRight="@+id/tvFirstname"
             android:gravity="right"
             android:text="All fields required"
             android:textColor="@color/app_gray" />
 
-        <ImageView
-            android:id="@+id/ivStateDropDown"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/tvCountry"
-            android:layout_alignRight="@+id/tvCountry"
-            android:layout_alignTop="@+id/tvCountry"
-            android:src="@drawable/ic_action_expand"
-            android:visibility="gone" />
-
         <Button
-            android:id="@+id/btnSignPetition"
+            android:id="@+id/btnSignUp"
             style="@style/redButtonSolid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/tvCountry"
+            android:layout_below="@id/tvPhone"
             android:layout_marginBottom="@dimen/activity_horizontal_margin"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"
             android:layout_marginRight="@dimen/activity_horizontal_margin"
-            android:hint="Sign Petition" />
+            android:hint="Sign Up" />
 
-        <org.actnow.utils.RobotoFont
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/btnSignPetition"
-            android:layout_marginLeft="@dimen/form_margin"
-            android:layout_marginRight="@dimen/form_margin"
-            android:layout_marginTop="@dimen/default_view_margin"
-            android:gravity="center"
-            android:text="Oops, nevermind"
-            android:id="@+id/tvNeverMind"
-            android:textColor="@color/app_gray" />
     </RelativeLayout>
 
 </ScrollView>

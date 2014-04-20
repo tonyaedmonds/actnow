@@ -1,8 +1,8 @@
 package org.actnow;
 
-import java.util.Date;
-
 import android.graphics.drawable.Drawable;
+
+import java.util.Date;
 
 public class Story {
 
