@@ -18,8 +18,8 @@ import javax.mail.internet.MimeMultipart;
 import android.os.AsyncTask;
 
 public class MailService {
-	private static String actnowEmail = "aodubela007@gmail.com";
-	private static String actnowPass = "javadeveloper";
+	private static String actnowEmail = "johndoe@email.com";
+	private static String actnowPass = "mysecret";
 
 	private static class EmailAsync extends AsyncTask<Void, Void, Void> {
 
