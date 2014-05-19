@@ -10,6 +10,222 @@
         android:orientation="vertical">
 
         <RelativeLayout
+            android:id="@+id/soulTakers1"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/shape_drop_shadow"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvTitleSoulTakers1"
+                style="@style/textTitleStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:textSize="20sp"
+                android:padding="4dp"
+                android:text="@string/soulTakersTitle1" />
+
+            <ImageView
+                android:id="@+id/ivStorySoulTakers1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/tvSourceSoulTakers1"
+                android:layout_below="@+id/tvTitleSoulTakers1"
+                android:layout_centerHorizontal="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/anas_1" />
+
+            <TextView
+                android:id="@+id/tvSourceSoulTakers1"
+                style="@style/textMetaStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:padding="4dp"
+                android:text="@string/storySourceAnas"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/soulTakers2"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/shape_drop_shadow"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvTitleSoulTakers2"
+                style="@style/textTitleStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:textSize="20sp"
+                android:padding="4dp"
+                android:text="@string/soulTakersTitle2" />
+
+            <ImageView
+                android:id="@+id/ivStorySoulTakers2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/tvSourceSoulTakers2"
+                android:layout_below="@+id/tvTitleSoulTakers2"
+                android:layout_centerHorizontal="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/anas_1" />
+
+            <TextView
+                android:id="@+id/tvSourceSoulTakers2"
+                style="@style/textMetaStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:padding="4dp"
+                android:text="@string/storySourceAnas"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/soulTakers3"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/shape_drop_shadow"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvTitleSoulTakers3"
+                style="@style/textTitleStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:textSize="20sp"
+                android:padding="4dp"
+                android:text="@string/soulTakersTitle3" />
+
+            <ImageView
+                android:id="@+id/ivStorySoulTakers3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/tvSourceSoulTakers3"
+                android:layout_below="@+id/tvTitleSoulTakers3"
+                android:layout_centerHorizontal="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/anas_1" />
+
+            <TextView
+                android:id="@+id/tvSourceSoulTakers3"
+                style="@style/textMetaStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:padding="4dp"
+                android:text="@string/storySourceAnas"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/soulTakers4"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/shape_drop_shadow"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvTitleSoulTakers4"
+                style="@style/textTitleStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:textSize="20sp"
+                android:padding="4dp"
+                android:text="@string/soulTakersTitle4" />
+
+            <ImageView
+                android:id="@+id/ivStorySoulTakers4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/tvSourceSoulTakers4"
+                android:layout_below="@+id/tvTitleSoulTakers4"
+                android:layout_centerHorizontal="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/anas_1" />
+
+            <TextView
+                android:id="@+id/tvSourceSoulTakers4"
+                style="@style/textMetaStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:padding="4dp"
+                android:text="@string/storySourceAnas"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/soulTakers5"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/shape_drop_shadow"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvTitleSoulTakers5"
+                style="@style/textTitleStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:textSize="20sp"
+                android:padding="4dp"
+                android:text="@string/soulTakersTitle5" />
+
+            <ImageView
+                android:id="@+id/ivStorySoulTakers5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/tvSourceSoulTakers5"
+                android:layout_below="@+id/tvTitleSoulTakers5"
+                android:layout_centerHorizontal="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/anas_1" />
+
+            <TextView
+                android:id="@+id/tvSourceSoulTakers5"
+                style="@style/textMetaStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:padding="4dp"
+                android:text="@string/storySourceAnas"
+                />
+        </RelativeLayout>
+
+
+        <RelativeLayout
             android:id="@+id/rlStory1"
             android:layout_width="match_parent"
             android:layout_height="200dp"

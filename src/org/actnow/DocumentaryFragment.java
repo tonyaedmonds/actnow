@@ -48,7 +48,9 @@ public class DocumentaryFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Intent.ACTION_VIEW, Uri
-                        .parse("http://vimeo.com/89383986")));
+                        .parse("https:/www.youtube.com/watch?v=dQe2oSq2rLg")));
+//                startActivity(new Intent(Intent.ACTION_VIEW, Uri
+//                        .parse("http://vimeo.com/89383986")));
             }
         });
 

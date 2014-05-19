@@ -92,6 +92,21 @@ public class DetailStoryFragment extends Fragment {
             case R.id.ivStory3:
                 story = ActnowApp.getJournalistFaceToFaceStory(getResources());
                 break;
+            case R.id.ivStorySoulTakers1:
+                story = ActnowApp.getSoulTakers1Story(getResources());
+                break;
+            case R.id.ivStorySoulTakers2:
+                story = ActnowApp.getSoulTakers2Story(getResources());
+                break;
+            case R.id.ivStorySoulTakers3:
+                story = ActnowApp.getSoulTakers3Story(getResources());
+                break;
+            case R.id.ivStorySoulTakers4:
+                story = ActnowApp.getSoulTakers4Story(getResources());
+                break;
+            case R.id.ivStorySoulTakers5:
+                story = ActnowApp.getSoulTakers5Story(getResources());
+                break;
             default:
                 break;
         }
