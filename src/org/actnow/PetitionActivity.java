@@ -58,13 +58,13 @@ public class PetitionActivity extends ActionBarActivity implements TextWatcher,
 		tvCity.setOnEditorActionListener(this);
 
 		((TextView) findViewById(R.id.tvPetitionTitle)).setText(title);
-		((TextView) findViewById(R.id.tvNeverMind))
-				.setOnClickListener(new View.OnClickListener() {
-					@Override
-					public void onClick(View v) {
-						finish();
-					}
-				});
+//		((TextView) findViewById(R.id.tvNeverMind))
+//				.setOnClickListener(new View.OnClickListener() {
+//					@Override
+//					public void onClick(View v) {
+//						finish();
+//					}
+//				});
 
 		btnSignPetition = ((Button) findViewById(R.id.btnSignPetition));
 		btnSignPetition.setOnClickListener(new View.OnClickListener() {
