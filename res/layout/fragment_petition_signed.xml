@@ -6,34 +6,24 @@
     android:background="@color/app_black"
     android:padding="@dimen/form_margin">
 
-    <org.actnow.utils.RobotoFont
-        android:id="@+id/tvPetitionSigned"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:textColor="@color/app_white"
-        style="@style/roboto_slab_regular"
-        android:textSize="20sp"
-        android:text="@string/petition_signed"/>
 
     <org.actnow.utils.RobotoFont
-        android:id="@+id/tvThankYou"
+        android:id="@+id/tvSuccess"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:layout_below="@+id/tvPetitionSigned"
+        android:layout_marginTop="24dp"
         android:textColor="@color/app_red"
         style="@style/roboto_slab_regular"
         android:textSize="22sp"
-        android:text="@string/petition_signed_thanku"/>
+        android:text="@string/petition_signed_success"/>
 
     <View
         android:id="@+id/ivLineBreak1"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_below="@+id/tvThankYou"
+        android:layout_below="@+id/tvSuccess"
         android:layout_alignParentLeft="true"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
         android:background="@color/app_red" />
 
     <View
@@ -43,4 +33,27 @@
         android:layout_below="@+id/ivLineBreak1"
         android:layout_marginTop="0.25dp"
         android:background="@color/app_red" />
+
+    <org.actnow.utils.RobotoFont
+        android:id="@+id/tvPetitionSigned"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:textColor="@color/app_white"
+        android:layout_below="@+id/ivLineBreak2"
+        style="@style/roboto_slab_light"
+        android:textSize="20sp"
+        android:text="@string/petition_signed"/>
+
+    <org.actnow.utils.RobotoFont
+        android:id="@+id/tvPetitionSignedThanku"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/app_white"
+        android:layout_below="@+id/tvPetitionSigned"
+        style="@style/roboto_slab_thin"
+        android:textSize="20sp"
+        android:text="@string/petition_signed_thanku"/>
+
 </RelativeLayout>

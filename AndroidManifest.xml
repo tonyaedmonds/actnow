@@ -15,7 +15,8 @@
         android:icon="@drawable/ic_launcher"
         android:label="actNOW"
         android:theme="@style/AppTheme" >
-        <activity android:name="org.actnow.MainActivity" />
+        <activity android:name="org.actnow.MainActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
         <activity android:name="org.actnow.PetitionSignedActivity" />
         <activity
             android:name="org.actnow.PetitionActivity"

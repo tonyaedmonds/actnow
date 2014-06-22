@@ -14,12 +14,16 @@ public class FragmentTabs extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         mTabHost = new FragmentTabHost(getActivity());
-        mTabHost.setup(getActivity(), getChildFragmentManager(), R.id.fragmentPetitionTab);
 
-        mTabHost.addTab(mTabHost.newTabSpec("summary").setIndicator("Summary"),
-                SummaryFragmentTab.class, null);
-        mTabHost.addTab(mTabHost.newTabSpec("updates").setIndicator("Updates"),
-                UpdateFragmentTab.class, null);
+        if(mTabHost != null){
+            mTabHost.setup(getActivity(), getChildFragmentManager(), R.id.fragmentPetitionTab);
+
+            mTabHost.addTab(mTabHost.newTabSpec("petition").setIndicator("Petition"),
+                    SummaryFragmentTab.class, null);
+            mTabHost.addTab(mTabHost.newTabSpec("updates").setIndicator("Updates"),
+                    UpdateFragmentTab.class, null);
+        }
+
 
         return mTabHost;
     }

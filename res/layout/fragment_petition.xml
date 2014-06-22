@@ -64,7 +64,7 @@
             android:layout_below="@+id/tvSignPetition"
             android:layout_marginTop="@dimen/stepMargin"
             android:ems="10"
-            android:hint="Firstname"
+            android:hint="First Name"
             android:imeOptions="actionNext"
             android:inputType="text"
             android:maxLength="50"
@@ -76,7 +76,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvFirstname"
-            android:hint="Lastname"
+            android:hint="Last Name"
             android:imeOptions="actionNext"
             android:inputType="text"
             android:maxLength="50"
@@ -145,7 +145,7 @@
             android:layout_marginRight="@dimen/form_margin"
             android:layout_marginTop="@dimen/default_view_margin"
             android:gravity="center"
-            android:text="Oops, nevermind"
+            android:text="After signing, your petition will be e-mailed to President John Dramani Mahama’s Chief of Staff."
             android:id="@+id/tvNeverMind"
             android:textColor="@color/app_gray" />
     </RelativeLayout>
